@@ -1,4 +1,4 @@
-import { FetchBaseQueryError } from "@rtk-incubator/rtk-query";
+import { FetchBaseQueryError } from "@reduxjs/toolkit/query/react";
 
 // Reference: https://gist.github.com/Shrugsy/6b6af02aef1f783df9d636526c1e05fa
 
