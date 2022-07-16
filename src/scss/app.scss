@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+:root {
+  --color-primary: #21444a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.app {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+main {
+  position: relative;
+}
+
+.mf-initial-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  svg {
+    display: inline;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    color: rgb(226 232 240 / 1);
+    animation: spin 1s linear infinite;
+    fill: #475569;
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+      color: rgb(71 85 105 / 1);
+      fill: #cbd5e1;
+    }
+  }
+}
+
+.mf-initial-loading-failed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  color: red;
+  height: 1.5rem;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #fff;
+}

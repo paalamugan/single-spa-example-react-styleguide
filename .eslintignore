@@ -1,0 +1,12 @@
+.DS_Store
+/dist-ssr
+/dist
+*.scss
+*.css
+*.svg
+*.local
+/.next
+/node_modules
+node_modules/*
+/build
+vite.config.ts
