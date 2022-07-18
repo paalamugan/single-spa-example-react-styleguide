@@ -8,7 +8,7 @@ import {
   Routes,
 } from 'react-router-dom';
 
-import { store } from '../app/store';
+import store from '../src/store/store';
 import setupServer from './setupServer';
 
 interface RenderOptions {
