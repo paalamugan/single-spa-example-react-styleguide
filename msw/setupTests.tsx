@@ -1,4 +1,3 @@
-import 'whatwg-fetch';
 import React from 'react';
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
@@ -9,19 +8,16 @@ import {
   Routes,
 } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
-import { mockServer } from './mockServer';
+import { setupServer } from './setupServer';
 
+interface RenderOptions {
+  route: string
+  path?: string
+}
+    
 export const setupTests = () => {
-  const { server, state: serverState } = mockServer()
-
-  beforeAll(() => server.listen({ onUnhandledRequest: 'warn' }))
-  afterEach(() => server.resetHandlers())
-  afterAll(() => server.close())
-
-  interface RenderOptions {
-    route: string
-    path?: string
-  }
+  const { server, serverState } = setupServer();
+  
   function renderWithProvider(
     children: React.ReactChild,
     { route, path }: RenderOptions = { route: '/', path: '' }
