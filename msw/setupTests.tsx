@@ -1,14 +1,15 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { store } from '../app/store';
+import { createMemoryHistory } from 'history';
+import { render } from '@testing-library/react';
 import {
   unstable_HistoryRouter as HistoryRouter,
   Route,
   Routes,
 } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
-import { setupServer } from './setupServer';
+
+import { store } from '../app/store';
+import setupServer from './setupServer';
 
 interface RenderOptions {
   route: string
